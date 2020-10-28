@@ -1,6 +1,6 @@
 ---
     - name: remove packages
-      hosts: aws
+      hosts: ubuntu_linux
       remote_user: ubuntu
       vars:
         ansible_ssh_private_key_file: "../learning-tf/configs/mykey"
