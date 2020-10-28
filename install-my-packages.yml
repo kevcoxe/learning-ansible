@@ -1,0 +1,24 @@
+---
+    - name: install packages
+      hosts: aws
+      remote_user: ubuntu
+      vars:
+        ansible_ssh_private_key_file: "../learning-tf/configs/mykey"
+      tasks:
+        - name: install vim
+          become: true
+          apt:
+            name: vim
+            state: latest
+
+        - name: install tmux
+          become: true
+          apt:
+            name: tmux
+            state: latest
+
+        - name: install git
+          become: true
+          apt:
+            name: git
+            state: latest

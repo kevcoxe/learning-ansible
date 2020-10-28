@@ -1,0 +1,24 @@
+---
+    - name: remove packages
+      hosts: aws
+      remote_user: ubuntu
+      vars:
+        ansible_ssh_private_key_file: "../learning-tf/configs/mykey"
+      tasks:
+        - name: remove vim
+          become: true
+          apt:
+            name: vim
+            state: absent
+
+        - name: remove tmux
+          become: true
+          apt:
+            name: tmux
+            state: absent
+
+        - name: remove git
+          become: true
+          apt:
+            name: git
+            state: absent
